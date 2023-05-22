@@ -1,36 +1,22 @@
-import { NavLink, Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import Container from 'components/Container/Container';
-import styled from 'styled-components';
-import s from './MoviesLayout.module.css';
-
-const Link = styled(NavLink)`
-  padding: 8px 16px;
-  border-radius: 4px;
-  text-decoration: none;
-  color: black;
-  font-weight: 500;
-
-  &.active {
-    color: white;
-    background-color: #9d0043;
-  }
-`;
+import { Header, Navigation, Link } from './MoviesLayout.styled';
 
 export default function MoviesLayout() {
   return (
     <Container>
-      <header className={s.header}>
+      <Header>
         <nav>
-          <ul className={s.navigation}>
+          <Navigation>
             <li>
               <Link to="/">Home</Link>
             </li>
             <li>
               <Link to="/movies">Movies</Link>
             </li>
-          </ul>
+          </Navigation>
         </nav>
-      </header>
+      </Header>
 
       <main>
         <Outlet />
