@@ -1,24 +1,24 @@
-// import { useEffect, useState } from 'react';
-// import { useParams } from 'react-router-dom';
-// import { getReviewsInfo } from 'components/services/moviesApi';
-// import Reviews from 'components/Reviews/Reviews';
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { getReviewsInfo } from 'components/services/moviesApi';
+import Reviews from 'components/Reviews/Reviews';
 
-// export default function ReviewsView() {
-//   const { movieId } = useParams();
-//   const [review, setReview] = useState(null);
+export default function ReviewsView() {
+  const { movieId } = useParams();
+  const [reviews, setReviews] = useState(null);
 
-//   useEffect(() => {
-//     const fetchData = async () => {
-//       try {
-//         const review = await getReviewsInfo(movieId);
-//         setReview(review);
-//       } catch (error) {
-//         console.error('Error while fetching review:', error);
-//       }
-//     };
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const reviews = await getReviewsInfo(movieId);
+        setReviews(reviews);
+      } catch (error) {
+        console.error('Error while fetching reviews:', error);
+      }
+    };
 
-//     fetchData();
-//   }, [movieId]);
+    fetchData();
+  }, [movieId]);
 
-//   return <Reviews review={review} />;
-// }
+  return <Reviews reviews={reviews} />;
+}

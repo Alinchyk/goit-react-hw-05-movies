@@ -39,13 +39,13 @@ export const getCastInfo = async movieId => {
   }
 };
 
-// export const getReviewsInfo = async movieId => {
-//   try {
-//     const { data } = await axios.get(
-//       `/movie/${movieId}/reviews?api_key=${API_KEY}&page=1`
-//     );
-//     return data.reviews;
-//   } catch (error) {
-//     throw new Error('Failed to fetch movie reviews');
-//   }
-// };
+export const getReviewsInfo = async movieId => {
+  try {
+    const response = await axios.get(
+      `/movie/${movieId}/reviews?api_key=${API_KEY}&page=1`
+    );
+    return response.data.results;
+  } catch (error) {
+    throw new Error('Failed to fetch movie reviews');
+  }
+};

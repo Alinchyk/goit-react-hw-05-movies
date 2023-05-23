@@ -1,31 +1,25 @@
-// import { Section, ReviewsList } from './Reviews.styled';
-// import Loader from 'components/Loader/Loader';
+import { Section, ReviewsList, Review, ReviewTitle } from './Reviews.styled';
+import Loader from 'components/Loader/Loader';
 
-// export default function Reviews({ reviews }) {
-//   if (!reviews) {
-//     return;
-//   }
+export default function Reviews({ reviews }) {
+  if (!reviews) {
+    return <Loader />;
+  }
 
-//   return (
-//     <Section>
-//       {reviews ? (
-//         <>
-//           {reviews.length === 0 ? (
-//             <p>There are no reviews yet.</p>
-//           ) : (
-//             <ReviewsList>
-//               {reviews.map(({ author, content, id }) => (
-//                 <li key={id}>
-//                   <h3>Author: {author}</h3>
-//                   <p>{content}</p>
-//                 </li>
-//               ))}
-//             </ReviewsList>
-//           )}
-//         </>
-//       ) : (
-//         <Loader />
-//       )}
-//     </Section>
-//   );
-// }
+  return (
+    <Section>
+      {reviews.length > 0 ? (
+        <ReviewsList>
+          {reviews.map((review, index) => (
+            <Review key={index}>
+              <ReviewTitle>Author: {review.author}</ReviewTitle>
+              <p>{review.content}</p>
+            </Review>
+          ))}
+        </ReviewsList>
+      ) : (
+        <p>There are no reviews yet.</p>
+      )}
+    </Section>
+  );
+}
