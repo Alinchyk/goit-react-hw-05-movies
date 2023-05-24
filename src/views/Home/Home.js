@@ -20,9 +20,9 @@ export default function Home() {
   }, []);
 
   return (
-    <main>
+    <>
       <HomeTitle>Trending today</HomeTitle>
       <MoviesList movies={trendingMovies} />
-    </main>
+    </>
   );
 }

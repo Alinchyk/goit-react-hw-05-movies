@@ -1,5 +1,7 @@
 import { Outlet } from 'react-router-dom';
 import Container from 'components/Container/Container';
+import { Suspense } from 'react';
+import Loader from 'components/Loader/Loader';
 import { Header, Navigation, Link } from './MoviesLayout.styled';
 
 export default function MoviesLayout() {
@@ -18,9 +20,9 @@ export default function MoviesLayout() {
         </nav>
       </Header>
 
-      <main>
+      <Suspense fallback={<Loader />}>
         <Outlet />
-      </main>
+      </Suspense>
     </Container>
   );
 }
