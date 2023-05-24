@@ -4,7 +4,7 @@ import styled from 'styled-components';
 export const Card = styled.div`
   display: flex;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 `;
 
 export const CardImage = styled.img`
@@ -36,7 +36,7 @@ export const GoBackLink = styled(Link)`
 `;
 
 export const CardText = styled.p`
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 `;
 
 export const CardTitle = styled.h2`
@@ -46,9 +46,7 @@ export const CardTitle = styled.h2`
   font-weight: 800;
   font-style: italic;
   line-height: 44px;
-  margin-top: 10px;
   text-align: center;
-  margin-bottom: 30px;
 `;
 
 export const ElemTitle = styled.h2`
@@ -56,14 +54,12 @@ export const ElemTitle = styled.h2`
   justify-content: space-between;
   align-items: center;
   min-height: 80px;
-  margin-bottom: 10px;
 `;
 
 export const MovieLink = styled(NavLink)`
   display: inline-block;
   justify-content: center;
   align-items: center;
-  margin-bottom: 10px;
   background-color: white;
   border: none;
   border-radius: 4px;

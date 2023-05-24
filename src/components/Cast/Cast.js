@@ -1,4 +1,3 @@
-import Loader from 'components/Loader/Loader';
 import { ListItem, List, Section } from './Cast.styled';
 import blankImage from './blank_profile.png';
 
@@ -11,9 +10,7 @@ export default function Cast({ cast }) {
 
   return (
     <Section>
-      {!cast ? (
-        <Loader />
-      ) : (
+      {cast.length > 0 ? (
         <List>
           {cast.map(({ id, profile_path, name, character }) => {
             const imageSRC = profile_path ? IMG_URL + profile_path : blankImage;
@@ -40,8 +37,7 @@ export default function Cast({ cast }) {
             );
           })}
         </List>
-      )}
-      {!cast.length && (
+      ) : (
         <p>There is no information about the cast of this film yet.</p>
       )}
     </Section>

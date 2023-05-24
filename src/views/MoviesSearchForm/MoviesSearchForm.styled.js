@@ -1,4 +1,20 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+
+export const ListLink = styled(Link)`
+  color: black;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 18;
+
+  &:hover {
+    color: #9d0043;
+  }
+`;
+
+export const ListItem = styled.li`
+  margin-bottom: 10px;
+`;
 
 export const SearchForm = styled.form`
   display: flex;

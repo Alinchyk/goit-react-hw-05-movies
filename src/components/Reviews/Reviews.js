@@ -1,9 +1,8 @@
 import { Section, ReviewsList, Review, ReviewTitle } from './Reviews.styled';
-import Loader from 'components/Loader/Loader';
 
 export default function Reviews({ reviews }) {
   if (!reviews) {
-    return <Loader />;
+    return;
   }
 
   return (

@@ -49,3 +49,14 @@ export const getReviewsInfo = async movieId => {
     throw new Error('Failed to fetch movie reviews');
   }
 };
+
+export const getMoviesByName = async query => {
+  try {
+    const { data } = await axios.get(
+      `/search/movie?api_key=${API_KEY}&query=${query}&language=en-US&page=1&include_adult=false`
+    );
+    return data;
+  } catch (error) {
+    console.error('Error while searching movies:', error);
+  }
+};

@@ -1,14 +1,9 @@
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import propTypes from 'prop-types';
-import Loader from 'components/Loader/Loader';
 import { Title } from './MovieList.styled';
 
 export default function MoviesList({ movies }) {
   const location = useLocation();
-
-  if (!movies) {
-    return <Loader />;
-  }
 
   return (
     <>
